@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_URL || "https://mern-fullstack-crud-app-backend.onrender.com/api/v1/posts";
+
 function AddEditForm() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -10,7 +12,7 @@ function AddEditForm() {
   useEffect(() => {
     if (id) {
       async function fetchPost() {
-        const response = await fetch(`http://localhost:3000/api/v1/posts/${id}`);
+        const response = await fetch(`${API_URL}/${id}`);
         const data = await response.json();
         setTitle(data.data.title);
         setContent(data.data.content);
@@ -23,8 +25,8 @@ function AddEditForm() {
     e.preventDefault();
     const method = id ? "PUT" : "POST";
     const url = id
-      ? `http://localhost:3000/api/v1/posts/${id}`
-      : "http://localhost:3000/api/v1/posts";
+      ? `${API_URL}/${id}`
+      : API_URL;
     await fetch(url, {
       method,
       headers: {
