@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const API_URL = import.meta.env.VITE_API_URL || "https://mern-fullstack-crud-app-backend.onrender.com/api/v1/posts";
+const API_URL = import.meta.env.VITE_API_URL || "https://mern-fullstack-crud-app-backend-l986.onrender.com/api/v1/posts";
 
 function AddEditForm() {
   const { id } = useParams();

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "./Header";
 import Post from "./Post";
 
-const API_URL = import.meta.env.VITE_API_URL || "https://mern-fullstack-crud-app-backend.onrender.com/api/v1/posts";
+const API_URL = import.meta.env.VITE_API_URL || "https://mern-fullstack-crud-app-backend-l986.onrender.com/api/v1/posts";
 
 function Home() {
   const [posts, setPosts] = useState([]);
